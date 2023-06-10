@@ -4,19 +4,16 @@
  */
 package Modelos;
 
-
 import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 /**
  *
  * @author Willy Morales
-*  */
-
+ */
 @Entity
 @Table(name = "eventos")
 public class Evento {

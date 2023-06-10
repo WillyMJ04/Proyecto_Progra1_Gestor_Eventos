@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package Controles;
+package Controladores;
 
 import Modelos.Evento;
 import java.io.File;
 import java.net.URL;
-//import java.sql.Timestamp;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,18 +34,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-//import org.hibernate.Session;
-//import org.hibernate.SessionFactory;
-//import org.hibernate.cfg.Configuration;
-//import org.hibernate.query.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
-/**
- * FXML Controller class
- *
- * @author Willy Morales
- */
-public class EventosController implements Initializable {
-///*******************************Elementos de Register Event***********************
+
+public class EventosControllerAdmin implements Initializable {
+
+
     @FXML
     private Button btnNewEventoRegister;
     @FXML
@@ -120,7 +117,6 @@ public class EventosController implements Initializable {
         
     }
 
-    /**
     public Boolean
             createEvento(String nombre, String descripcion, String imagen, Timestamp fecha_inicio, Timestamp fecha_fin, Timestamp fecha_preventa, Timestamp fecha_retiro, float precioVipMG, float precioVip, float precioPlateaA, float precioPlateaB, String responsable, int estado) {
 
@@ -143,7 +139,6 @@ public class EventosController implements Initializable {
 
         return false;
     }
-    * */
 
     @FXML
     private void seleccionarImagenPortadaRegister(ActionEvent event) {
@@ -163,7 +158,6 @@ public class EventosController implements Initializable {
 
     @FXML
     private void registrarNuevoEvento(ActionEvent event) {
-        /**
         String newNombre = txtNombreEventoRegister.getText();
         String newDescripcion = txtNombreEventoRegister.getText();
 
@@ -198,12 +192,10 @@ public class EventosController implements Initializable {
         } else {
             mostrarMensaje(AlertType.ERROR, "Algo anda mal", "Hubo un error al registrar el evento, verifica los datos e intenta nuevamente.");
         }
-        * 
-        * */
     }
 
     public String getEvento(int id) {
-        /**
+
         SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Evento.class
         ).buildSessionFactory();
         Session sessionActual = sessionFactory.openSession();
@@ -220,14 +212,11 @@ public class EventosController implements Initializable {
         } finally {
             sessionFactory.close();
         }
-        * */
 
         return "Evento no encontrado";
     }
 
     public List<Evento> getEventos() {
-        
-        /*
         SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Evento.class
         ).buildSessionFactory();
         Session sessionActual = sessionFactory.openSession();
@@ -246,15 +235,12 @@ public class EventosController implements Initializable {
             sessionFactory.close();
         }
 
-        */
-        //return eventos;
-        return null;
+        return eventos;
     }
 
     public String
             updateEvento(int id, String nombre) {
 
-        /*
         SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Evento.class
         ).buildSessionFactory();
         Session sessionActual = sessionFactory.openSession();
@@ -274,8 +260,6 @@ public class EventosController implements Initializable {
         } finally {
             sessionFactory.close();
         }
-
-        */
 
         return "Error al actualizar";
     }

@@ -1,4 +1,4 @@
-package com.mycompany.proyecto_final_progra1_gestor;
+package com.willymorales.proyecto_final_progra1_gestor;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * JavaFX App
+ * @author Willy Morales
  */
 public class App extends Application {
 
@@ -17,7 +17,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("primary"), 807, 534);
         stage.setScene(scene);
         stage.show();
     }

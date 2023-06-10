@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+   <children>
+      <Label layoutX="115.0" layoutY="45.0" text="INGRESA TUS CREDENCIALES">
+         <font>
+            <Font name="Arial" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCorreoUsuario" layoutX="263.0" layoutY="114.0" />
+      <Label layoutX="175.0" layoutY="119.0" text="Correo:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="175.0" layoutY="171.0" text="Contraseña:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPasswordUsuario" layoutX="263.0" layoutY="167.0" />
+      <Button fx:id="btnIniciarSesion" layoutX="200.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnIniciarSesionClick" text="Iniciar Sesion" />
+      <Button fx:id="btnCrearCuenta" layoutX="316.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnCrearCuentaClick" text="Crear Cuenta" />
+      <Label fx:id="btnIniciarInvitado" layoutX="232.0" layoutY="298.0" onMouseClicked="#btnIniciarInvitadoClick" text="Ingresar como invitado" textFill="#1b58b9" underline="true">
+         <font>
+            <Font name="Arial" size="11.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Glow level="0.17" />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

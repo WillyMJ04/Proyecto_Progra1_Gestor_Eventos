@@ -31,7 +31,7 @@
                      </effect></Button>
                         <Button centerShape="false" mnemonicParsing="false" prefHeight="42.0" prefWidth="245.0" style="-fx-background-color: #F1F6FF;" text="Consulta Boleto" textAlignment="RIGHT" />
                         <Button centerShape="false" mnemonicParsing="false" prefHeight="42.0" prefWidth="253.0" style="-fx-background-color: #F1F6FF;" text="Usuarios" textAlignment="RIGHT" />
-                        <Button centerShape="false" mnemonicParsing="false" prefHeight="42.0" prefWidth="163.0" style="-fx-background-color: #F1F6FF;" text="Importar desde archivo" textAlignment="RIGHT" />
+                        <Button centerShape="false" mnemonicParsing="false" prefHeight="42.0" prefWidth="163.0" style="-fx-background-color: #F1F6FF;" text="Importar  archivo" textAlignment="RIGHT" />
                     </children>
                     <padding>
                         <Insets left="5.0" right="5.0" top="10.0" />
@@ -132,7 +132,10 @@
                                         <DatePicker layoutX="194.0" layoutY="93.0" prefHeight="25.0" prefWidth="121.0" />
                                         <TextField layoutX="14.0" layoutY="44.0" prefHeight="25.0" prefWidth="161.0" />
                                         <TextArea layoutX="14.0" layoutY="94.0" prefHeight="80.0" prefWidth="161.0" />
-                                        <ImageView fitHeight="129.0" fitWidth="133.0" layoutX="504.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+                                        <ImageView fitHeight="129.0" fitWidth="133.0" layoutX="504.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Downloads/evento.png" />
+                                 </image></ImageView>
                                         <Label layoutX="520.0" layoutY="27.0" text="Portada del evento">
                                             <font>
                                                 <Font name="Arial" size="12.0" />
@@ -180,7 +183,10 @@
                                             </font>
                                         </Label>
                                         <TextArea editable="false" layoutX="14.0" layoutY="94.0" prefHeight="80.0" prefWidth="175.0" />
-                                        <ImageView fitHeight="177.0" fitWidth="235.0" layoutX="395.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                                        <ImageView fitHeight="177.0" fitWidth="235.0" layoutX="395.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Downloads/evento.png" />
+                                 </image></ImageView>
                                         <Label layoutX="275.0" layoutY="27.0" text="Portada del evento">
                                             <font>
                                                 <Font name="Arial" size="12.0" />
@@ -196,7 +202,7 @@
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="449.0" prefWidth="541.0">
                                     <children>
                                         <Button fx:id="btnNewEventoRegister" layoutX="443.0" layoutY="448.0" mnemonicParsing="false" onAction="#registrarNuevoEvento" prefHeight="51.0" prefWidth="179.0" text="Registrar Nuevo Evento" />
-                                        <Label layoutX="3.0" layoutY="2.0" text="Datos del evento">
+                                        <Label layoutX="3.0" layoutY="2.0" text="DETALLES DEL EVENTO">
                                             <font>
                                                 <Font name="Arial" size="14.0" />
                                             </font>
@@ -225,7 +231,10 @@
                                         <DatePicker fx:id="datePreventaEventoRegister" layoutX="342.0" layoutY="52.0" prefHeight="25.0" prefWidth="128.0" />
                                         <TextField fx:id="txtNombreEventoRegister" layoutX="14.0" layoutY="52.0" prefHeight="25.0" prefWidth="161.0" />
                                         <TextArea fx:id="txtDetalleEventoRegister" layoutX="14.0" layoutY="114.0" prefHeight="80.0" prefWidth="161.0" />
-                                        <ImageView fx:id="imageEventoRegister" fitHeight="223.0" fitWidth="277.0" layoutX="14.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true" />
+                                        <ImageView fx:id="imageEventoRegister" fitHeight="223.0" fitWidth="277.0" layoutX="34.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Downloads/TICKET.jpg" />
+                                 </image></ImageView>
                                         <Label layoutX="102.0" layoutY="216.0" text="Portada del evento">
                                             <font>
                                                 <Font name="Arial" size="12.0" />
@@ -287,11 +296,6 @@
                                         </Label>
                                         <TextField fx:id="txtNombreResponsableEventoRegister1" layoutX="195.0" layoutY="171.0" prefHeight="25.0" prefWidth="161.0" />
                                         <ImageView fx:id="imageStageEventoRegister" fitHeight="191.0" fitWidth="304.0" layoutX="341.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true" />
-                                        <Label layoutX="449.0" layoutY="216.0" text="Croquis del evento">
-                                            <font>
-                                                <Font name="Arial" size="12.0" />
-                                            </font>
-                                        </Label>
                                         <Button fx:id="btnNuevaPortadaRegister" layoutX="85.0" layoutY="473.0" mnemonicParsing="false" onAction="#seleccionarImagenPortadaRegister" prefHeight="23.0" prefWidth="129.0" text="Seleccionar Imagen" />
                                     </children>
                                 </AnchorPane>
@@ -360,7 +364,7 @@
                         </Tab>
                     </tabs>
                 </TabPane>
-                <Label layoutX="551.0" layoutY="3.0" text="EVENTOS">
+                <Label layoutX="551.0" text="EVENTOS">
                     <font>
                         <Font name="Arial" size="20.0" />
                     </font>

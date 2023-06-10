@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="1280.0" style="-fx-background-color: #FCFCFC;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EventosControllerAdmin">
+    <children>
+        <AnchorPane prefHeight="535.0" prefWidth="0.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="535.0" prefWidth="161.0" spacing="10.0">
+                    <children>
+                        <Button centerShape="false" mnemonicParsing="false" prefHeight="42.0" prefWidth="280.0" style="-fx-background-color: #F1F6FF;" text="Eventos">
+                     <effect>
+                        <Blend />
+                     </effect></Button>
+                        <Button centerShape="false" mnemonicParsing="false" prefHeight="42.0" prefWidth="245.0" style="-fx-background-color: #F1F6FF;" text="Consulta Boleto" textAlignment="RIGHT" />
+                        <Button centerShape="false" mnemonicParsing="false" prefHeight="42.0" prefWidth="253.0" style="-fx-background-color: #F1F6FF;" text="Usuarios" textAlignment="RIGHT" />
+                        <Button centerShape="false" mnemonicParsing="false" prefHeight="42.0" prefWidth="163.0" style="-fx-background-color: #F1F6FF;" text="Importar  archivo" textAlignment="RIGHT" />
+                    </children>
+                    <padding>
+                        <Insets left="5.0" right="5.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="156.0" prefHeight="535.0" prefWidth="1124.0">
+            <children>
+                <TabPane prefHeight="535.0" prefWidth="1124.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab onSelectionChanged="#initialListaEventos" text="Lista de eventos">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="449.0" prefWidth="541.0">
+                                    <children>
+                                        <TableView fx:id="tviewEventosList" layoutX="4.0" layoutY="90.0" prefHeight="415.0" prefWidth="1124.0">
+                                            <columns>
+                                                <TableColumn fx:id="colId" editable="false" prefWidth="42.0" text="ID" />
+                                                <TableColumn fx:id="colNombre" editable="false" prefWidth="98.0" text="Nombre" />
+                                    <TableColumn fx:id="colDescripcion" editable="false" prefWidth="135.0" text="Descripcion" />
+                                    <TableColumn fx:id="colFechaInicio" editable="false" prefWidth="88.0" text="Inicio" />
+                                    <TableColumn fx:id="colFechaFin" editable="false" prefWidth="87.0" text="Finalizacion" />
+                                    <TableColumn fx:id="colPreventa" editable="false" prefWidth="94.0" text="Preventa" />
+                                    <TableColumn fx:id="colRetiro" editable="false" prefWidth="89.0" text="Retiro" />
+                                    <TableColumn fx:id="colPrecioVipMG" editable="false" prefWidth="75.0" text="VIP+MG" />
+                                    <TableColumn fx:id="colPrecioVip" editable="false" prefWidth="52.0" text="VIP" />
+                                    <TableColumn fx:id="colPrecioPlateaA" editable="false" prefWidth="71.0" text="Platea &quot;A&quot;" />
+                                    <TableColumn fx:id="colPrecioPlateaB" editable="false" prefWidth="70.0" text="Platea &quot;B&quot;" />
+                                    <TableColumn fx:id="colResponsableEvento" editable="false" prefWidth="118.0" text="Responsable" />
+                                    <TableColumn fx:id="colEstado" editable="false" prefWidth="101.0" text="Estado" />
+                                            </columns>
+                                        </TableView>
+                                        <Button layoutX="448.0" layoutY="48.0" mnemonicParsing="false" text="Aplicar Filtro" />
+                                        <Label layoutX="3.0" layoutY="7.0" text="Vea los eventos en el intervalo de fechas y/o segmentados por estado.">
+                                            <font>
+                                                <Font name="Arial" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker layoutX="14.0" layoutY="48.0" prefHeight="25.0" prefWidth="121.0" />
+                                        <Label layoutX="14.0" layoutY="31.0" text="Desde">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker layoutX="151.0" layoutY="48.0" prefHeight="25.0" prefWidth="121.0" />
+                                        <Label layoutX="287.0" layoutY="31.0" text="Estado">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox layoutX="287.0" layoutY="48.0" prefHeight="25.0" prefWidth="137.0" />
+                                        <Label layoutX="151.0" layoutY="31.0" text="Hasta">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Lista de boletos">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="449.0" prefWidth="541.0">
+                                    <children>
+                                        <TableView layoutX="4.0" layoutY="187.0" prefHeight="312.0" prefWidth="644.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                <TableColumn prefWidth="68.0" text="C2" />
+                                            </columns>
+                                        </TableView>
+                                        <Button layoutX="272.0" layoutY="154.0" mnemonicParsing="false" text="Guardar Cambios" />
+                                        <Label layoutX="3.0" layoutY="7.0" text="Detalle de evento">
+                                            <font>
+                                                <Font name="Arial" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="12.0" layoutY="27.0" text="Nombre">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="12.0" layoutY="76.0" text="Descripcion">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker layoutX="194.0" layoutY="44.0" prefHeight="25.0" prefWidth="121.0" />
+                                        <Label layoutX="194.0" layoutY="27.0" text="Fecha de inicio">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="194.0" layoutY="76.0" text="Fecha de preventa">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker layoutX="194.0" layoutY="93.0" prefHeight="25.0" prefWidth="121.0" />
+                                        <TextField layoutX="14.0" layoutY="44.0" prefHeight="25.0" prefWidth="161.0" />
+                                        <TextArea layoutX="14.0" layoutY="94.0" prefHeight="80.0" prefWidth="161.0" />
+                                        <ImageView fitHeight="129.0" fitWidth="133.0" layoutX="504.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Downloads/evento.png" />
+                                 </image></ImageView>
+                                        <Label layoutX="520.0" layoutY="27.0" text="Portada del evento">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="339.0" layoutY="27.0" text="Precio de seccion">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox layoutX="339.0" layoutY="44.0" prefHeight="25.0" prefWidth="137.0" />
+                                        <Label layoutX="341.0" layoutY="76.0" text="Precio (en quetzales)">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField layoutX="341.0" layoutY="93.0" prefHeight="25.0" prefWidth="135.0" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Detalle de boletos">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="449.0" prefWidth="541.0">
+                                    <children>
+                                        <TableView layoutX="4.0" layoutY="187.0" prefHeight="312.0" prefWidth="644.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                <TableColumn prefWidth="68.0" text="C2" />
+                                            </columns>
+                                        </TableView>
+                                        <Label layoutX="3.0" layoutY="7.0" text="Detalle de boletos">
+                                            <font>
+                                                <Font name="Arial" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="12.0" layoutY="27.0" text="Seleccione el evento a visualizar">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="12.0" layoutY="76.0" text="Descripcion">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea editable="false" layoutX="14.0" layoutY="94.0" prefHeight="80.0" prefWidth="175.0" />
+                                        <ImageView fitHeight="177.0" fitWidth="235.0" layoutX="395.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Downloads/evento.png" />
+                                 </image></ImageView>
+                                        <Label layoutX="275.0" layoutY="27.0" text="Portada del evento">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox layoutX="14.0" layoutY="46.0" prefHeight="25.0" prefWidth="174.0" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#initialRegistroEventos" text="Registrar evento">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="449.0" prefWidth="541.0">
+                                    <children>
+                                        <Button fx:id="btnNewEventoRegister" layoutX="443.0" layoutY="448.0" mnemonicParsing="false" onAction="#registrarNuevoEvento" prefHeight="51.0" prefWidth="179.0" text="Registrar Nuevo Evento" />
+                                        <Label layoutX="3.0" layoutY="2.0" text="DETALLES DEL EVENTO">
+                                            <font>
+                                                <Font name="Arial" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="12.0" layoutY="35.0" text="Nombre">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="12.0" layoutY="96.0" text="Descripcion">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker fx:id="dateInicioEventoRegister" layoutX="194.0" layoutY="52.0" prefHeight="25.0" prefWidth="124.0" />
+                                        <Label layoutX="194.0" layoutY="35.0" text="Fecha de inicio">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="342.0" layoutY="35.0" text="Fecha de preventa">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker fx:id="datePreventaEventoRegister" layoutX="342.0" layoutY="52.0" prefHeight="25.0" prefWidth="128.0" />
+                                        <TextField fx:id="txtNombreEventoRegister" layoutX="14.0" layoutY="52.0" prefHeight="25.0" prefWidth="161.0" />
+                                        <TextArea fx:id="txtDetalleEventoRegister" layoutX="14.0" layoutY="114.0" prefHeight="80.0" prefWidth="161.0" />
+                                        <ImageView fx:id="imageEventoRegister" fitHeight="223.0" fitWidth="277.0" layoutX="34.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Downloads/TICKET.jpg" />
+                                 </image></ImageView>
+                                        <Label layoutX="102.0" layoutY="216.0" text="Portada del evento">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="572.0" layoutY="35.0" text="PLATEA &quot;A&quot;" textAlignment="RIGHT">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker fx:id="dateFinalizacionEventoRegister" layoutX="194.0" layoutY="113.0" prefHeight="25.0" prefWidth="124.0" />
+                                        <Label layoutX="194.0" layoutY="96.0" text="Fecha de finalizacion">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="476.0" layoutY="2.0" text="Precios de secciones (Q.)" underline="true">
+                                            <font>
+                                                <Font name="Arial" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txtPrecioPlateaAEventoRegister" layoutX="572.0" layoutY="52.0" prefHeight="25.0" prefWidth="63.0" />
+                                        <Label layoutX="491.0" layoutY="35.0" text="VIP + M&amp;G" textAlignment="RIGHT">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txtPrecioVIPMGEventoRegister" layoutX="491.0" layoutY="52.0" prefHeight="25.0" prefWidth="63.0" />
+                                        <Label layoutX="574.0" layoutY="96.0" text="PLATEA &quot;B&quot;" textAlignment="RIGHT">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txtPrecioPlateaBEventoRegister" layoutX="574.0" layoutY="113.0" prefHeight="25.0" prefWidth="63.0" />
+                                        <Label layoutX="493.0" layoutY="96.0" text="VIP" textAlignment="RIGHT">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txtPrecioVIPEventoRegister" layoutX="493.0" layoutY="113.0" prefHeight="25.0" prefWidth="63.0" />
+                                        <Separator layoutX="493.0" layoutY="88.0" prefHeight="0.0" prefWidth="140.0" />
+                                        <Separator layoutX="562.0" layoutY="39.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="0.0" />
+                                        <Label layoutX="341.0" layoutY="96.0" text="Fecha de retiro">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker fx:id="dateRetiroEventoRegister" layoutX="341.0" layoutY="113.0" prefHeight="25.0" prefWidth="128.0" />
+                                        <Label layoutX="494.0" layoutY="149.0" text="Estado">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="cbxEstadoEventoRegister" layoutX="495.0" layoutY="170.0" prefHeight="25.0" prefWidth="140.0" />
+                                        <Label layoutX="194.0" layoutY="154.0" text="Responsable del evento">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txtNombreResponsableEventoRegister1" layoutX="195.0" layoutY="171.0" prefHeight="25.0" prefWidth="161.0" />
+                                        <ImageView fx:id="imageStageEventoRegister" fitHeight="191.0" fitWidth="304.0" layoutX="341.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Button fx:id="btnNuevaPortadaRegister" layoutX="85.0" layoutY="473.0" mnemonicParsing="false" onAction="#seleccionarImagenPortadaRegister" prefHeight="23.0" prefWidth="129.0" text="Seleccionar Imagen" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Editar evento">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="449.0" prefWidth="541.0">
+                                    <children>
+                                        <TableView layoutX="4.0" layoutY="187.0" prefHeight="312.0" prefWidth="644.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                <TableColumn prefWidth="68.0" text="C2" />
+                                            </columns>
+                                        </TableView>
+                                        <Button layoutX="272.0" layoutY="154.0" mnemonicParsing="false" text="GUARDAR DATOS" />
+                                        <Label layoutX="3.0" layoutY="7.0" text="Detallado del evento">
+                                            <font>
+                                                <Font name="Arial" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="12.0" layoutY="27.0" text="NOMBRE:">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="12.0" layoutY="76.0" text="DESCRIPCION">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker layoutX="194.0" layoutY="44.0" prefHeight="25.0" prefWidth="121.0" />
+                                        <Label layoutX="194.0" layoutY="27.0" text="FECHA INICIO:">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="194.0" layoutY="76.0" text="FECHA PREVENTA">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker layoutX="194.0" layoutY="93.0" prefHeight="25.0" prefWidth="121.0" />
+                                        <TextField layoutX="14.0" layoutY="44.0" prefHeight="25.0" prefWidth="161.0" />
+                                        <TextArea layoutX="14.0" layoutY="94.0" prefHeight="80.0" prefWidth="161.0" />
+                                        <Label layoutX="339.0" layoutY="27.0" text="PRECIO DE SECCION">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox layoutX="339.0" layoutY="44.0" prefHeight="25.0" prefWidth="137.0" />
+                                        <Label layoutX="341.0" layoutY="76.0" text="PRECIO &quot;Q&quot;">
+                                            <font>
+                                                <Font name="Arial" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField layoutX="341.0" layoutY="93.0" prefHeight="25.0" prefWidth="135.0" />
+                              <ImageView fitHeight="163.0" fitWidth="305.0" layoutX="500.0" layoutY="13.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../Desktop/Sin%20título.png" />
+                                 </image>
+                              </ImageView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+                <Label layoutX="551.0" text="EVENTOS">
+                    <font>
+                        <Font name="Arial" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

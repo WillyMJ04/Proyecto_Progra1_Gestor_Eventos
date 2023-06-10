@@ -1,8 +1,9 @@
-module com.mycompany.proyecto_final_progra1_gestor {
+/* doesn't work with source level 1.8:
+module com.danielbor.gestor_eventos_venta_boletos {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.base;
 
-    opens com.mycompany.proyecto_final_progra1_gestor to javafx.fxml;
-    exports com.mycompany.proyecto_final_progra1_gestor;
+    opens com.danielbor.gestor_eventos_venta_boletos to javafx.fxml;
+    exports com.danielbor.gestor_eventos_venta_boletos;
 }
+*/

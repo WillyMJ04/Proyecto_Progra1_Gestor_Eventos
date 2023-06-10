@@ -1,4 +1,4 @@
-package com.mycompany.proyecto_final_progra1_gestor;
+package com.willymorales.proyecto_final_progra1_gestor;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
