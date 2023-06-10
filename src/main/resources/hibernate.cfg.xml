@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuración de la conexión a la base de datos -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/proyecto_umg</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">Sqljava23/</property>
+
+        <!-- Configuración de dialecto y estrategia de generación de tabla -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+        
+        <!-- Configuracion de visualizacion de consultas en consola -->
+        <property name="hibernate.show_sql">true</property>
+
+    </session-factory>
+</hibernate-configuration>
